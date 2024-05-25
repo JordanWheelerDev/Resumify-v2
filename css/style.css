@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+  background-color: #0b151f;
+  height: 100vh;
+  background: url("../imgs/modernbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Radio Canada", sans-serif;
+}
+
+/* Global Styles */
+.resumify-button {
+  background: linear-gradient(180deg, #958fc5, #b0d7fe);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  color: #2c2c2c;
+  transition: all 0.5s ease-in-out;
+}
+
+.resumify-button:hover {
+  background: linear-gradient(180deg, #8d87bb, #a4c9ed);
+  color: #2c2c2c;
+}
+
+.go-back-button {
+  background: linear-gradient(180deg, #c58f8f, #feb0b0);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  color: #2c2c2c;
+  transition: all 0.5s ease-in-out;
+}
+
+.go-back-button:hover {
+  background: linear-gradient(180deg, #b98787, #eea5a5);
+  color: #2c2c2c;
+}
+
+.add-button {
+  background: linear-gradient(180deg, #8fc590, #b0fec9);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  color: #2c2c2c;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-button:hover {
+  background: linear-gradient(180deg, #87bb87, #a4ec9e);
+  color: #2c2c2c;
+}
+
+/* Landing Styles */
+.landing-container {
+  color: white;
+  font-size: 2rem;
+}
+
+.landing-container h1 {
+  font-size: 52px;
+}
+
+.landing-container h2 {
+  font-size: 34px;
+}
+
+.landing-container h1 span {
+  background: -webkit-linear-gradient(180deg, #958fc5, #b0d7fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-container h2 span {
+  background: -webkit-linear-gradient(180deg, #958fc5, #b0d7fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-container .landing-input {
+  height: 60px;
+  width: 80%;
+  border: 2px solid #b0d7fe;
+  border-radius: 10px;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.landing-icon {
+  color: #b0d7fe;
+}
+
+.landing-textarea {
+  height: 200px;
+  width: 80%;
+  border: 2px solid #b0d7fe;
+  border-radius: 10px;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+}
