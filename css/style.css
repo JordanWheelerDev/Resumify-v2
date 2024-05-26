@@ -63,6 +63,10 @@ body {
   color: #2c2c2c;
 }
 
+.text-xsm {
+  font-size: 12px;
+}
+
 /* Landing Styles */
 .landing-container {
   color: white;
