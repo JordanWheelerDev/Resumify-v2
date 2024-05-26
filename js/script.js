@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const userJobTitle1 = document.getElementById('userJobTitle1');
     const userCompanyName1 = document.getElementById('userCompanyName1');
     const userJobResponsibilities1 = document.getElementById('userJobResponsibilities1');
+    const userDegree = document.getElementById('userDegree');
+    const userEducationInstitutionName = document.getElementById('userEducationInstitutionName');
+    const userEducationInformation = document.getElementById('userEducationInformation');
     const userSkills = document.getElementById('userSkills');
     const userEmailAddress = document.getElementById('userEmailAddress');
     const userPhoneNumber = document.getElementById('userPhoneNumber');
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const userLinkedIn = document.getElementById('userLinkedIn');
     const userGitHub = document.getElementById('userGitHub');
     const userTwitter = document.getElementById('userTwitter');
+    const addMoreEducationInformation = document.getElementById('addMoreEducationInformation');
     // const userJobTitle2 = document.getElementById('userJobTitle2');
     // const userCompanyName2 = document.getElementById('userCompanyName2');
     // const userJobResponsibilities2 = document.getElementById('userJobResponsibilities2');
@@ -53,6 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navigation and retaining user input
     nextToStepTwo.addEventListener('click', () => {
+        if(userFullName.value === '') {
+            alert('Please enter your full name');
+            return;
+        }
         localStorage.setItem('userFullName', userFullName.value);
         stepOne.style.display = 'none';
         stepTwo.style.display = 'block';
@@ -60,73 +68,67 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     nextToStepThree.addEventListener('click', () => {
+        if(userAboutMe.value === '') {
+            alert('Please enter a short description about yourself');
+            return;
+        }
         localStorage.setItem('userAboutMe', userAboutMe.value);
         stepTwo.style.display = 'none';
         stepThree.style.display = 'block';
-        userFullNameText.innerHTML = localStorage.getItem('userFullName');
-        userAboutMe.value = localStorage.getItem('userAboutMe');
     });
 
     nextToStepFour.addEventListener('click', () => {
+        if(userJobTitle1.value === '' || userCompanyName1.value === '' || userJobResponsibilities1.value === '') {
+            alert('Please fill in job title, company name and your responsibilities before continuing!');
+            return;
+        }
         localStorage.setItem('userJobTitle1', userJobTitle1.value);
         localStorage.setItem('userCompanyName1', userCompanyName1.value);
         localStorage.setItem('userJobResponsibilities1', userJobResponsibilities1.value);
-        // localStorage.setItem('userJobTitle2', userJobTitle2.value);
-        // localStorage.setItem('userCompanyName2', userCompanyName2.value);
-        // localStorage.setItem('userJobResponsibilities2', userJobResponsibilities2.value);
-        // localStorage.setItem('userJobTitle3', userJobTitle3.value);
-        // localStorage.setItem('userCompanyName3', userCompanyName3.value);
-        // localStorage.setItem('userJobResponsibilities3', userJobResponsibilities3.value);
         stepThree.style.display = 'none';
         stepFour.style.display = 'block';
-        userFullNameText.innerHTML = localStorage.getItem('userFullName');
-        userAboutMe.value = localStorage.getItem('userAboutMe');
-        userJobTitle1.value = localStorage.getItem('userJobTitle1');
-        userCompanyName1.value = localStorage.getItem('userCompanyName1');
-        userJobResponsibilities1.value = localStorage.getItem('userJobResponsibilities1');
-        // userJobTitle2.value = localStorage.getItem('userJobTitle2');
-        // userCompanyName2.value = localStorage.getItem('userCompanyName2');
-        // userJobResponsibilities2.value = localStorage.getItem('userJobResponsibilities2');
-        // userJobTitle3.value = localStorage.getItem('userJobTitle3');
-        // userCompanyName3.value = localStorage.getItem('userCompanyName3');
-        // userJobResponsibilities3.value = localStorage.getItem('userJobResponsibilities3');
     });
 
     nextToStepFive.addEventListener('click', () => {
-        localStorage.setItem('userSkills', userSkills.value);
+        if(userDegree.value === '' || userEducationInstitutionName.value === '' || userEducationInformation.value === '') {
+            alert('Please fill in degree, institution name and your education information before continuing!');
+            return;
+        }
+        localStorage.setItem('userDegree', userDegree.value);
+        localStorage.setItem('userEducationInstitutionName', userEducationInstitutionName.value);
+        localStorage.setItem('userEducationInformation', userEducationInformation.value);
         stepFour.style.display = 'none';
         stepFive.style.display = 'block';
-        userFullNameText.innerHTML = localStorage.getItem('userFullName');
-        userAboutMe.value = localStorage.getItem('userAboutMe');
-        userJobTitle1.value = localStorage.getItem('userJobTitle1');
-        userCompanyName1.value = localStorage.getItem('userCompanyName1');
-        userJobResponsibilities1.value = localStorage.getItem('userJobResponsibilities1');
     });
 
     nextToStepSix.addEventListener('click', () => {
-        localStorage.setItem('userEmailAddress', userEmailAddress.value);
-        localStorage.setItem('userPhoneNumber', userPhoneNumber.value);
-        localStorage.setItem('userAddress', userAddress.value);
+        if(userSkills.value === '') {
+            alert('Please fill in your skills before continuing!');
+            return;
+        }
+        localStorage.setItem('userSkills', userSkills.value);
         stepFive.style.display = 'none';
         stepSix.style.display = 'block';
-        userFullNameText.innerHTML = localStorage.getItem('userFullName');
-        userAboutMe.value = localStorage.getItem('userAboutMe');
-        userJobTitle1.value = localStorage.getItem('userJobTitle1');
-        userCompanyName1.value = localStorage.getItem('userCompanyName1');
-        userJobResponsibilities1.value = localStorage.getItem('userJobResponsibilities1');
     });
 
     nextToStepSeven.addEventListener('click', () => {
+        if(userEmailAddress.value === '' || userPhoneNumber.value === '' || userAddress.value === '') {
+            alert('Please fill in your email address, phone number and address before continuing!');
+            return;
+        }
+        localStorage.setItem('userEmailAddress', userEmailAddress.value);
+        localStorage.setItem('userPhoneNumber', userPhoneNumber.value);
+        localStorage.setItem('userAddress', userAddress.value);
+        stepSix.style.display = 'none';
+        stepSeven.style.display = 'block';
+    });
+
+    nextToStepEight.addEventListener('click', () => {
         localStorage.setItem('userLinkedIn', userLinkedIn.value);
         localStorage.setItem('userGitHub', userGitHub.value);
         localStorage.setItem('userTwitter', userTwitter.value);
-        stepSix.style.display = 'none';
-        stepSeven.style.display = 'block';
-        userFullNameText.innerHTML = localStorage.getItem('userFullName');
-        userAboutMe.value = localStorage.getItem('userAboutMe');
-        userJobTitle1.value = localStorage.getItem('userJobTitle1');
-        userCompanyName1.value = localStorage.getItem('userCompanyName1');
-        userJobResponsibilities1.value = localStorage.getItem('userJobResponsibilities1');
+        stepSeven.style.display = 'none';
+        stepEight.style.display = 'block';
     });
 
     // Previous button steps
